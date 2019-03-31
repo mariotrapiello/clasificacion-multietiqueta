@@ -1,4 +1,4 @@
-## IMPORTS ##
+## IMPORTS #
 import scipy.sparse
 import numpy as np
 import matplotlib.pyplot as pyplot

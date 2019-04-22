@@ -5,7 +5,7 @@ from sklearn.multioutput import ClassifierChain
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.gaussian_process import GaussianProcessClassifier
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.naive_bayes import GaussianNB
 from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
 
@@ -15,7 +15,6 @@ clasificadores_dict ={
     2 : GaussianProcessClassifier(),
     3 : DecisionTreeClassifier(),
     4 : RandomForestClassifier(),
-    5 : AdaBoostClassifier(),
     6 : GaussianNB(),
     7 : QuadraticDiscriminantAnalysis()
 }
@@ -53,14 +52,7 @@ parameters9 = {
     "base_estimator__n_estimators": [10,30,70,100],
     "base_estimator__max_depth": [5,10,15],
 }
-parameters10 = {
-    "estimator__n_estimators": [10,30,70,100],
-    "estimator__algorithm": ["SAMME", "SAMME.R"]
-}
-parameters11 = {
-    "base_estimator__n_estimators": [10,30,70,100],
-    "base_estimator__algorithm": ["SAMME", "SAMME.R"]
-}
+
 
 parametros_dict ={
     (clasificadores_dict[0],0) : parameters0,
@@ -71,8 +63,6 @@ parametros_dict ={
     (clasificadores_dict[3],1) : parameters7,
     (clasificadores_dict[4],0) : parameters8,
     (clasificadores_dict[4],1) : parameters9,
-    (clasificadores_dict[5],0) : parameters10,
-    (clasificadores_dict[5],1) : parameters11,
     (clasificadores_dict[6],0) : {},
     (clasificadores_dict[6],1) : {},
     (clasificadores_dict[7],0) : {},

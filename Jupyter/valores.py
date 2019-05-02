@@ -1,22 +1,13 @@
-#from sklearn.gaussian_process.kernels import RBF
 from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.multioutput import ClassifierChain
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.gaussian_process import GaussianProcessClassifier
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.naive_bayes import GaussianNB
-from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
+from sklearn.linear_model import SGDClassifier
+from sklearn.linear_model import Perceptron
+from sklearn.linear_model import PassiveAggressiveClassifier
 
 clasificadores_dict ={
     0 : LogisticRegression(),
-    1 : KNeighborsClassifier(),
-    2 : GaussianProcessClassifier(),
-    3 : DecisionTreeClassifier(),
-    4 : RandomForestClassifier(),
-    6 : GaussianNB(),
-    7 : QuadraticDiscriminantAnalysis()
+    1 : SGDClassifier(),
+    2 : Perceptron(),
+    3 : PassiveAggressiveClassifier()
 }
 
 parameters0 = {
@@ -31,41 +22,32 @@ parameters1 = {
     "base_estimator__max_iter":[10000]
 }
 parameters2 = {
-    "estimator__n_neighbors": [1]
+    "estimator__alpha": [5e-5,1e-7,1e-8],
+    "estimator__tol": [0.01,0.001,0.0001],
+    "estimator__warm_start": [False,True],
+    "estimator__random_state" :[42],
+    "estimator__learning_rate" :["invscaling"],
+    "estimator__eta0":[1,3,5,10],
+    "estimator__power_t":[0.1,0.2,0.3,0.4,0.5,0.6]
 }
 parameters3 = {
-    "base_estimator__n_neighbors": [1]
+    "base_estimator__alpha": [5e-5,1e-7,1e-8],
+    "base_estimator__tol": [0.01,0.001,0.0001],
+    "base_estimator__warm_start": [False,True],
+    "base_estimator__random_state" :[42],
+    "base_estimator__learning_rate" :["invscaling"],
+    "base_estimator__eta0":[1,3,5,10],
+    "base_estimator__power_t":[0.1,0.2,0.3,0.4,0.5,0.6]
 }
-parameters6 = {
-    "estimator__max_depth": [5,10,15]
-}
-parameters7 = {
-    "base_estimator__splitter": ["best", "random"],
-    "base_estimator__max_depth": [5,10,15],
-    "base_estimator__class_with": [None, "balanced"]
-}
-parameters8 = {
-    "estimator__n_estimators": [10,30,70,100],
-    "estimator__max_depth": [5,10,15],
-}
-parameters9 = {
-    "base_estimator__n_estimators": [10,30,70,100],
-    "base_estimator__max_depth": [5,10,15],
-}
-
 
 parametros_dict ={
     (clasificadores_dict[0],0) : parameters0,
     (clasificadores_dict[0],1) : parameters1,
     (clasificadores_dict[1],0) : parameters2,
     (clasificadores_dict[1],1) : parameters3,
+    (clasificadores_dict[2],0) : parameters4,
+    (clasificadores_dict[2],1) : parameters5,
     (clasificadores_dict[3],0) : parameters6,
-    (clasificadores_dict[3],1) : parameters7,
-    (clasificadores_dict[4],0) : parameters8,
-    (clasificadores_dict[4],1) : parameters9,
-    (clasificadores_dict[6],0) : {},
-    (clasificadores_dict[6],1) : {},
-    (clasificadores_dict[7],0) : {},
-    (clasificadores_dict[7],1) : {}
+    (clasificadores_dict[3],1) : parameters7
 }
 

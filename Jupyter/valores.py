@@ -39,6 +39,23 @@ parameters3 = {
     "base_estimator__eta0":[1,3,5,10],
     "base_estimator__power_t":[0.1,0.2,0.3,0.4,0.5,0.6]
 }
+parameters4 = {
+    "estimator__penalty":[None],
+    "estimator__alpha": [1e-1,1e-2,1e-3,1e-4,1e-5,1e-6,1e-7],
+    "estimator__tol": [0.01],
+    "estimator__warm_start": [False],
+    "estimator__eta0":[100,10,1,0.1],
+    "estimator__shuffle":[False]
+}
+parameters5 = {
+    "base_estimator__penalty":[None],
+    "base_estimator__alpha": [1e-1,1e-2,1e-3,1e-4,1e-5,1e-6,1e-7],
+    "base_estimator__tol": [0.01,0.001,0.0001],
+    "base_estimator__warm_start": [False, True],
+    "base_estimator__eta0":[1,3,5,10],
+    "base_estimator__shuffle":[True,False]
+}
+
 
 parametros_dict ={
     (clasificadores_dict[0],0) : parameters0,
@@ -46,8 +63,6 @@ parametros_dict ={
     (clasificadores_dict[1],0) : parameters2,
     (clasificadores_dict[1],1) : parameters3,
     (clasificadores_dict[2],0) : parameters4,
-    (clasificadores_dict[2],1) : parameters5,
-    (clasificadores_dict[3],0) : parameters6,
-    (clasificadores_dict[3],1) : parameters7
+    (clasificadores_dict[2],1) : parameters5
 }
 

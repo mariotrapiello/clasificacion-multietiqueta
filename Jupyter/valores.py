@@ -55,6 +55,24 @@ parameters5 = {
     "base_estimator__eta0":[1,3,5,10],
     "base_estimator__shuffle":[True,False]
 }
+parameters6 = {
+    "estimator__C":[0.1,1,10,100],
+    "estimator__tol": [0.1,0.01,0.001],
+    "estimator__warm_start": [True,False],
+    "estimator__class_weight":[None],
+    "estimator__shuffle":[True,False],
+    "estimator__average": [True,False,10,50,100],
+    "estimator__loss" : ["hinge","squared_hinge"]
+}
+parameters7 = {
+    "base_estimator__C":[0.1,1,10,100],
+    "base_estimator__tol": [0.1,0.01,0.001],
+    "base_estimator__warm_start": [True,False],
+    "base_estimator__class_weight":[None],
+    "base_estimator__shuffle":[True,False],
+    "base_estimator__average": [True,False,10,50,100],
+    "base_estimator__loss" : ["hinge","squared_hinge"]
+}
 
 
 parametros_dict ={
@@ -63,6 +81,8 @@ parametros_dict ={
     (clasificadores_dict[1],0) : parameters2,
     (clasificadores_dict[1],1) : parameters3,
     (clasificadores_dict[2],0) : parameters4,
-    (clasificadores_dict[2],1) : parameters5
+    (clasificadores_dict[2],1) : parameters5,
+    (clasificadores_dict[3],0) : parameters6,
+    (clasificadores_dict[3],1) : parameters7
 }
 

@@ -1,5 +1,5 @@
 # clasificacion-multietiqueta
-Trabajo Fin de Master 
+Trabajo Fin de Máster: Análisis comparativo de algoritmos de clasificación para un problema de clasificación multietiqueta.
 
 Este repositorio incluye un notebook de jupyter en el que se muestra la solución implementada que ha servido para desarrollar el Trabajo Fin de Máster del Máster Universitario de Telecomunicaciones de la Universidad Carlos III de Madrid.
 
